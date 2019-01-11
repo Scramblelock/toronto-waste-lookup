@@ -1,0 +1,16 @@
+.appHeader {
+  background: linear-gradient(89deg, #1d5994 0%, #22955f 100%);
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(30px + 2vmin);
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+
+
+
+
