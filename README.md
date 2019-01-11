@@ -18,4 +18,6 @@ Build a web app to search for waste items using the Toronto Waste Wizard databas
    - Render a green star button *if the item has been favourited*.
    - Clicking the green star button should remove the item from the saved list.
 
+## Design
 
+![Design](http://cdn.shopify.com/static/web-eng-challenge-summer-2019/design.png)
