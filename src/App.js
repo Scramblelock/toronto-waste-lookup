@@ -10,18 +10,25 @@ class App extends Component {
     super();
     this.state = {
       keyword: '',
-      isLoading: true,
+      favourites: [],
+      isLoaded: false,
       wasteItems: []
     }
   }
 
-  onButtonSubmit = (event) => {
-    // event.preventDefault();
-    // this.props.onButtonSubmit(this.state.keyword);
+  onButtonSubmit = (searchQuery) => {
     fetch('https://secure.toronto.ca/cc_sr_v1/data/swm_waste_wizard_APR?limit=1000')
-      .then(response=> response.json())
-      .then(data => console.log(data))
-      .catch(err => console.log(err))
+    .then(response=> response.json())
+    .then(json => {
+      this.setState({ isLoaded: true, wasteItems: json.filter(item => item.keywords.indexOf(searchQuery) !== -1)})
+    })
+    .catch(error => {
+      console.log('Error fetching and parsing data', error);
+    });
+  }
+
+  clearWasteItems = () => {
+    this.setState({ wasteItems: [] });
   }
 
   handleChange = (event) => {
@@ -32,17 +39,21 @@ class App extends Component {
   };
 
   render() {
-    
     return (
       <div className="App">
         <header className="appHeader" role="banner">
           <p className="headerTitle">Toronto Waste Lookup</p>
         </header>
-        <WasteSearchForm onButtonSubmit={this.onButtonSubmit}/>
-        <WasteCardList />
+        <WasteSearchForm 
+          onButtonSubmit={this.onButtonSubmit}
+          clearWasteItems={this.clearWasteItems}
+        />
+        <WasteCardList 
+          wasteItems={this.state.wasteItems}
+        />
         <FavouritesCardList />
       </div>
-    );
+    );  
   }
 }
 
