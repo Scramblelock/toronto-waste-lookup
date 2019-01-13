@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import WasteSearchForm from './components/WasteSearchForm/WasteSearchForm';
 import WasteCardList from './components/WasteCardList/WasteCardList';
 import FavouritesCardList from './components/FavouritesCardList/FavouritesCardList';
-import WasteCard from './components/WasteCard/WasteCard'
-import FavouritesCard from './components/FavouritesCard/FavouritesCard'
 
 import './App.css';
 
@@ -14,7 +12,7 @@ class App extends Component {
       keyword: '',
       favourites: [],
       isLoaded: false,
-      wasteItems: []
+      wasteItems: [],
     }
   }
 
@@ -35,7 +33,18 @@ class App extends Component {
     if (!event.target.value) {
       this.setState({ wasteItems: [] });
     }
-  };
+  }
+
+  addFav = (wasteItem) => {
+    let favourites = [...this.state.favourites];
+    favourites.push(wasteItem);
+    this.setState({ favourites });
+  }
+
+  removeFav = (wasteItem) => {
+    let updatedFavourites = this.state.favourites.filter(eachFavourite => eachFavourite !== wasteItem.title)
+    this.setState({ favourites: updatedFavourites });
+  }
 
   render() {
     return (
@@ -49,10 +58,15 @@ class App extends Component {
         />
         <WasteCardList 
           wasteItems={this.state.wasteItems}
+          addFav={this.addFav}
+          removeFav={this.removeFav}
+          favourites={this.state.favourites}
+        />        
+        <FavouritesCardList 
+          wasteItems={this.state.wasteItems}
+          removeFav={this.removeFav}
+          favourites={this.state.favourites}
         />
-        <WasteCard />
-        <FavouritesCardList />
-        <FavouritesCard />
       </div>
     );  
   }

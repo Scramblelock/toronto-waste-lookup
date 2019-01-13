@@ -1,12 +1,11 @@
 .wasteCardDetails {
 	display: grid;
 	flex-wrap: nowrap;
-	grid-template-columns: 5% auto auto;
-	justify-content: space-around;
+	grid-template-columns: 5% 25% auto;
 	align-items: start;
 }
 
-.starButton {
+.starButton--default, .starButton--favourite {
 	border: none;
   display: block;
   margin-block-start: 1em;
@@ -15,6 +14,14 @@
   margin-inline-end: 0px;
 }
 
-.faStar {
+.starButton--default .faStar {
 	color: grey;
+}
+
+.starButton--favourite {
+	background-color: #f7fefa;
+}
+
+.starButton--favourite .faStar {
+	color: #22955f;
 }
