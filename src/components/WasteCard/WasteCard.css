@@ -1,0 +1,20 @@
+.wasteCardDetails {
+	display: grid;
+	flex-wrap: nowrap;
+	grid-template-columns: 5% auto auto;
+	justify-content: space-around;
+	align-items: start;
+}
+
+.starButton {
+	border: none;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.faStar {
+	color: grey;
+}

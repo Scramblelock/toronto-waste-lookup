@@ -4,9 +4,9 @@ import WasteCard from '../WasteCard/WasteCard'
 const WasteCardList = ({ wasteItems }) => {
   return (
     <div>
-      {wasteItems.map(item => (
+      {wasteItems.map((item, i) => (
       	<WasteCard
-      		key={wasteItems.indexOf(item)}
+      		key={i}
       		title={item.title}
       		body={item.body}
       	/>
