@@ -30,14 +30,10 @@ class App extends Component {
     });
   }
 
-  clearWasteItems = () => {
-    this.setState({ wasteItems: [] });
-  }
-
   handleChange = (event) => {
     this.setState({keyword: event.target.value});
     if (!event.target.value) {
-      this.props.onButtonSubmit('');
+      this.setState({ wasteItems: [] });
     }
   };
 
@@ -49,7 +45,7 @@ class App extends Component {
         </header>
         <WasteSearchForm 
           onButtonSubmit={this.onButtonSubmit}
-          clearWasteItems={this.clearWasteItems}
+          handleChange={this.handleChange}
         />
         <WasteCardList 
           wasteItems={this.state.wasteItems}
