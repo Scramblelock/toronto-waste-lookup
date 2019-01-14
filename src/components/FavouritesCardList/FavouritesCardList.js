@@ -6,7 +6,7 @@ import './FavouritesCardList.css'
 const FavouritesCardList = ({ favourites, removeFav, addFav }) => {
   return (
     <div className='favouritesCardList'>
-      <h1>Favourites</h1>
+      <h1 className='favouritesHeading pl3 ml2'>Favourites</h1>
       {favourites.map((item, i) => (
       	<WasteCard
       		key={i}
