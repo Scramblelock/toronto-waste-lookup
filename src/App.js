@@ -20,7 +20,7 @@ class App extends Component {
     fetch('https://secure.toronto.ca/cc_sr_v1/data/swm_waste_wizard_APR?limit=1000')
     .then(response=> response.json())
     .then(json => {
-      this.setState({ isLoaded: true, wasteItems: json.filter(item => item.keywords.toLowerCase().includes(this.state.keyword.toLowerCase()))})
+      this.setState({ wasteItems: json.filter(item => item.keywords.toLowerCase().includes(this.state.keyword.toLowerCase()))})
     })
     .catch(error => {
       console.log('Error fetching and parsing data', error);
@@ -70,7 +70,7 @@ class App extends Component {
                 favourites={this.state.favourites}
               />
             ) : (
-              <div className="emptyFavourites pl3 ml2 pb3">
+              <div className="emptyFavourites pl4 pb3">
                 <h1 className='favouritesHeading'>Favourites</h1>
                 <h2>No favorites to show</h2>
                 <p>Search for waste items and add them to your favorites.</p>

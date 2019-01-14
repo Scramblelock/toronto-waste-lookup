@@ -29,7 +29,7 @@ class WasteCard extends Component {
             onClick={this.handleClick}
           >
             <FontAwesomeIcon 
-              className="faStar" 
+              className="faStar"
               icon={faStar} 
               onClick={this.handleClick}
             />
