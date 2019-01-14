@@ -14,7 +14,12 @@ class WasteCard extends Component {
       });
     }
     else {
-      this.props.removeFav(this.props.title);
+      if (event.target.classList.contains('starButton--default')) {
+        this.props.removeFav({
+          'title': this.props.title,
+          'body': this.props.body
+        });
+      }
     }
   }
 

@@ -20,7 +20,7 @@
 }
 
 .starButton--favourite {
-	background-color: #f7fefa;
+	background: transparent;
 }
 
 .starButton--favourite .faStar {
