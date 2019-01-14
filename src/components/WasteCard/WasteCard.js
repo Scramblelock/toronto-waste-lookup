@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import './WasteCard.css';
+import Parser from 'html-react-parser';
 
 class WasteCard extends Component {
   
@@ -15,14 +16,6 @@ class WasteCard extends Component {
     else {
       this.props.removeFav(this.props.title);
     }
-  }
-
-  createMarkup = (encodedHTML) => {
-    let parser = new DOMParser();
-    let decodedHTML = parser.parseFromString(encodedHTML, 'text/html');
-    return {
-        __html: decodedHTML.body.textContent
-    };
   }
 
   render() {
@@ -42,7 +35,7 @@ class WasteCard extends Component {
             />
           </button>
           <p>{title}</p>
-          <div dangerouslySetInnerHTML={this.createMarkup(body)}></div>
+          <div className='wasteBody' dangerouslySetInnerHTML={{ __html: Parser(body)}}></div>
         </div>
       </div>
     )

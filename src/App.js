@@ -42,8 +42,8 @@ class App extends Component {
   }
 
   removeFav = (wasteItem) => {
-    let updatedFavourites = this.state.favourites.filter(eachFavourite => eachFavourite !== wasteItem.title)
-    this.setState({ favourites: updatedFavourites });
+    let favourites = this.state.favourites.filter(eachFavourite => eachFavourite !== wasteItem.title)
+    this.setState({ favourites });
   }
 
   render() {

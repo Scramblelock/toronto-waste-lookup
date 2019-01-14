@@ -3,6 +3,7 @@
 	flex-wrap: nowrap;
 	grid-template-columns: 5% 25% auto;
 	align-items: start;
+	font-size: 25px;
 }
 
 .starButton--default, .starButton--favourite {
@@ -24,4 +25,12 @@
 
 .starButton--favourite .faStar {
 	color: #22955f;
+}
+
+.wasteBody {
+	padding-left: 20%;
+}
+
+.wasteBody li {
+		margin-bottom: 10px;
 }
