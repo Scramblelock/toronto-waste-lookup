@@ -11,7 +11,6 @@ class App extends Component {
     this.state = {
       keyword: '',
       favourites: [],
-      isLoaded: false,
       wasteItems: [],
     }
   }
@@ -42,7 +41,7 @@ class App extends Component {
   }
 
   removeFav = (wasteItem) => {
-    let favourites = this.state.favourites.filter(eachFavourite => eachFavourite !== wasteItem.title)
+    let favourites = this.state.favourites.filter(eachFavourite => eachFavourite.title !== wasteItem.title)
     this.setState({ favourites });
   }
 
@@ -62,11 +61,22 @@ class App extends Component {
           removeFav={this.removeFav}
           favourites={this.state.favourites}
         />        
-        <FavouritesCardList 
-          wasteItems={this.state.wasteItems}
-          removeFav={this.removeFav}
-          favourites={this.state.favourites}
-        />
+        <div className="favouritesSection">
+          {this.state.favourites.length > 0
+            ? (
+              <FavouritesCardList 
+                wasteItems={this.state.wasteItems}
+                removeFav={this.removeFav}
+                favourites={this.state.favourites}
+              />
+            ) : (
+              <div className="emptyFavourites pl3 ml2 pb3">
+                <h1 className='favouritesHeading'>Favourites</h1>
+                <h2>No favorites to show</h2>
+                <p>Search for waste items and add them to your favorites.</p>
+              </div>
+            )}
+        </div>
       </div>
     );  
   }

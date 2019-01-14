@@ -7,20 +7,15 @@ import Parser from 'html-react-parser';
 class WasteCard extends Component {
   
   handleClick = (event) => {
-    if (event.target.classList.contains('starButton--default')) {
-      this.props.addFav({
+    (event.target.classList.contains('starButton--default')) 
+      ? this.props.addFav({
         'title': this.props.title,
         'body': this.props.body
-      });
-    }
-    else {
-      if (event.target.classList.contains('starButton--default')) {
-        this.props.removeFav({
+      })
+      : this.props.removeFav({
           'title': this.props.title,
           'body': this.props.body
-        });
-      }
-    }
+      })
   }
 
   render() {
