@@ -1,6 +1,7 @@
 # Web Engineer Challenge - Summer 2019
 
-Build a web app to search for waste items using the Toronto Waste Wizard database, and save frequently used ones.
+A web app built with React to search for waste items using the Toronto Waste Wizard database, and save frequently used ones.
+https://scramblelock.github.io/toronto-waste-lookup/
 
 ## Instructions
 - Reproduce the design as provided in the screenshot, which displays example search results.
