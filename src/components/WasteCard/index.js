@@ -35,7 +35,7 @@ class WasteCard extends Component {
             />
           </button>
           <p>{title}</p>
-          <div className="wasteBody" dangerouslySetInnerHTML={{__html: Parser(body)}} />
+          <div className="wasteBody" dangerouslySetInnerHTML={{__html: Parser(body)}}></div>
         </div>
       </div>
     );
