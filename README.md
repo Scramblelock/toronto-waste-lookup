@@ -19,6 +19,11 @@ https://scramblelock.github.io/toronto-waste-lookup/
    - Render a green star button *if the item has been favourited*.
    - Clicking the green star button should remove the item from the saved list.
 
+## Additional Tasks
+- To make it accessible to people with disabilities, added a hidden <label> and an aria-label attribute on the button so that screen readers could interpret it.
+- Audited the app for the Shopify styles and added the Shopify linter to automatically lint the codebase
+- Wrote a unit test on one of the components (WasteSearchForm) to ensure that it rendered correctly.
+
 ## Design
 
 ![Design](http://cdn.shopify.com/static/web-eng-challenge-summer-2019/design.png)
