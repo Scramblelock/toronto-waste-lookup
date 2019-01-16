@@ -18,14 +18,14 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "gh-pages -d build",
+    "deploy": "npm run build&&gh-pages -d build",
     "lint": "eslint . --max-warnings 0"
   },
   "eslintConfig": {
     "extends": [
       "eslint:recommended",
       "plugin:shopify/react"
-    ], 
+    ],
     "env": {
       "browser": true,
       "node": true
@@ -42,4 +42,4 @@
     "eslint-plugin-shopify": "^26.1.2",
     "gh-pages": "^2.0.1"
   }
-} 
+}
