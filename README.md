@@ -1,9 +1,9 @@
-# Web Engineer Challenge - Summer 2019
+# Shopify Web Engineer Challenge - Summer 2019
 
 A web app built with React to search for waste items using the Toronto Waste Wizard database, and save frequently used ones.
 https://scramblelock.github.io/toronto-waste-lookup/
 
-## Instructions
+## Challenge Instructions
 - Reproduce the design as provided in the screenshot, which displays example search results.
 - The data must be taken from the [Waste Wizard Lookup data (JSON)](https://www.toronto.ca/city-government/data-research-maps/open-data/open-data-catalogue/#5ed40494-a290-7807-d5da-09ab6a56fca2).
 - Typing in the search field should *NOT* perform an API call.
@@ -18,6 +18,11 @@ https://scramblelock.github.io/toronto-waste-lookup/
    - Render the title and description of the item.
    - Render a green star button *if the item has been favourited*.
    - Clicking the green star button should remove the item from the saved list.
+
+## Additional Tasks
+- To make the app accessible to people with disabilities, added a hidden <label> and an aria-label attribute on the button so that screen readers could interpret it.
+- Audited the app for the Shopify styles and added the Shopify linter to automatically lint the codebase
+- Wrote a unit test on one of the components (WasteSearchForm) to ensure that it rendered correctly.
 
 ## Design
 
